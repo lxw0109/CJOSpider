@@ -1,9 +1,10 @@
 ---
 title: 中国裁判文书网(China Judgements Online)数据爬取总结(抓取思路+架构优化)
-date: 2017-06-06 08:08:08
+date: 2017-06-03 08:08:08
 tags: [w/o Selenium, IP Proxy, Redis, Mongodb, Scrapy]
 categories: [w/o Selenium, IP Proxy, Redis, Mongodb, Scrapy]
 ---
+本文是针对最近一个月写的中国裁判文书网(China Judgements Online)的数据爬取代码的总结, 具体代码请参见[CJOSpider on Github](https://github.com/hee0624/fintech_spider/tree/master/Spiders/CJOSpider).
 ### 一、抓取思路
 中国裁判文书网(China Judgements Online)的数据爬取过程主要包括两个步骤:   
 **1.爬取案件的基本信息(尤其是DocID)**  
