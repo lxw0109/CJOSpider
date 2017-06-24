@@ -4,6 +4,15 @@ date: 2017-06-03 08:08:08
 tags: [w/o Selenium, IP Proxy, Redis, Mongodb, Scrapy]
 categories: [w/o Selenium, IP Proxy, Redis, Mongodb, Scrapy]
 ---
+
+-20170624更新------------------------------------------------------------------------------------------------------------------  
+由于中国裁判文书网(China Judgements Online)网站在2017.6.16日（6.15日还能正常爬取）改版了， 所有的请求必须使用`Cookie`，否则得到的都是乱码。而且还必须使用IP代理，否则很容易被封（访问速度会变得特别慢，基本无法使用，改版前，输入验证码即可解封，现在似乎黑名单里的IP封禁更严格了，访问速度一直很慢，而且基本无法正确抓取到数据）。
+此外，网上有那种通过[破解URL构建的文章](https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=0&rsv_idx=1&tn=baidu&wd=MmEwMD&rsv_pq=a946daa600170532&rsv_t=a2e4ZIBkHtjRBdKzRtr%2BCqvexLUQmC9%2FpIpVHdl2LweHrBMmgq%2B58afEKHw&rqlang=cn&rsv_enter=1&rsv_sug3=2&rsv_n=2)，但感觉太复杂了，所以没有细看。
+因此，我现在采用的策略是先得到Cookie， 然后加上Cookie去请求就能够正确获取到数据了。
+总结一下就是两点：1.必须使用Cookie 2.必须使用IP代理
+详细实现请参见[这里](https://github.com/hee0624/fintech_spider/blob/master/Spiders/CJOSpider/CJOSpider_wo_scrapy_new.py).
+
+------------------------------------------------------------------------------------------------------------------------------
 本文是针对最近一个月写的中国裁判文书网(China Judgements Online)的数据爬取代码的总结, 具体代码请参见[CJOSpider on Github](https://github.com/hee0624/fintech_spider/tree/master/Spiders/CJOSpider).
 ### 一、抓取思路
 中国裁判文书网(China Judgements Online)的数据爬取过程主要包括两个步骤:   
