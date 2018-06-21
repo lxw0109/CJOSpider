@@ -1,7 +1,7 @@
-**title**: 中国裁判文书网(China Judgements Online)数据爬取总结(抓取思路+架构优化)
-**date**: 2017-06-03 08:08:08
-**tags**: [w/o Selenium, IP Proxy, Redis, Mongodb, Scrapy]
-**categories**: [w/o Selenium, IP Proxy, Redis, Mongodb, Scrapy]
+**title**: 中国裁判文书网(China Judgements Online)数据爬取总结(抓取思路+架构优化)  
+**date**: 2017-06-03 08:08:08  
+**tags**: [w/o Selenium, IP Proxy, Redis, Mongodb, Scrapy]  
+**categories**: [w/o Selenium, IP Proxy, Redis, Mongodb, Scrapy]  
 
 -20170624更新------------------------------------------------------------------------------------------------------------------  
 由于中国裁判文书网(China Judgements Online)网站在2017.6.16日（6.15日还能正常爬取）改版了， 所有的请求必须使用`Cookie`，否则得到的都是乱码。而且还必须使用IP代理，否则很容易被封（访问速度会变得特别慢，基本无法使用，改版前，输入验证码即可解封，现在似乎黑名单里的IP封禁更严格了，访问速度一直很慢，而且基本无法正确抓取到数据）。  
